@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>RM Cv genrater</title>
+    <link rel="icon" type="image/x-icon" href="img/cvicon.jpeg">
+    
+
+    <style>       
+        hr{
+            height:12px;
+            background-color: #ffffff;
+            border: none;
+        }
+     </style>
+
+
+</head>
+<body>
+
+    <div class="header">
+        <h1 class="text-center my-2">CV/Rusme Maker</h1>
+        <p>By Reem coder</p>
+      </div>
+
+     <div class="container" id="cv-form">
+        <div class="row">
+            <div class="col-md-6">
+                <!--<label for="image"style="margin-bottom 20px; position:center;"  >
+                    <input type="file" name="image" id="image" style="display:none;"/>
+                    <img src="img/profp.png"/>
+                    <h5   style=" color:#57737A">Click to Select Your photo </h5>
+                 </label>  -->
+
+                 <h3   style=" color:#57737A ;margin-top: 70px;">Personal Informaion </h3>
+                <div class="form-group">
+                    <label for="nameField">Your name:</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control"/>
+                </div>
+
+                <div class="form-group mt-2">
+                     <img id="cimg" src="img/call.png"/> Your Contact Number:
+                   <input  type="text" id="contanctField" placeholder="Enter here" class="form-control" />
+
+                </div>
+
+                <div class="form-group mt-2">
+                    <img id="limg" src="img/loc.png"/>Your Address:
+                    <textarea  id="adressField" 
+                    placeholder="Enter here" 
+                    class="form-control"
+                    rows="5"
+                    style="background-color: whitesmoke; "
+                     ></textarea>
+                </div>
+
+                <div class="form-group mt-3">
+                  <label>Select your photo</label>
+                  <input id="imageField" type="file" class="form-control">
+                
+                   
+                </div>           
+                
+                <h3 style="color: #57737A;font-size:large; margin-top:2px;" >Important Links:</h3>
+                <div class="form-group mt-2">
+                <img id="lnimg" src="img/ln.png"/>Linkedin:
+                <input  type="text" id="liField" placeholder="Enter here" class="form-control" />
+
+                <div class="form-group mt-2">
+                <img id="twimg" src="img/tw.png"/>Twitter:
+                <input  type="text" id="twField" placeholder="Enter here" class="form-control" />
+
+                </div>
+
+                <div class="form-group mt-2 mb-2">
+                 <img id="insimg" src="img/ins.png"/> Instagram:
+                 <input  type="text" id="lnsField" placeholder="Enter here" class="form-control" />
+
+                </div>
+
+             </div>
+           
+        </div>
+        <div class="col-md-6">
+
+             <h3 style="color: #57737A; margin-top: 70px;" >Professional Informaion </h3>
+
+             <div class="form-group mt-2">
+                 <label for="">Objective</label>
+                 <textarea  
+                 id="objField"
+                 placeholder="Enter here" 
+                 class="form-control "
+                 rows="5"
+                 style="background-color: whitesmoke;"
+                
+                  ></textarea>
+             </div>
+
+             <div class="form-group mt-2" id="we" >
+                 <label for="">Work Experience</label>
+                 <textarea 
+                 id="workField" 
+                 placeholder="Enter here" 
+                 class="form-control wefield"
+                 rows="3"
+                 style="background-color: whitesmoke;"
+                  ></textarea>
+
+                  <div class="container text-center mt-2" id="weAddButton">
+                         <button style="color: white; background-color:#85BDBF;border:none; border-radius:15%;" onclick="addNweWEField()" >Add</button>
+                  </div>
+
+             </div>
+
+             <div class="form-group mt-2 " id="aq">
+                 <label for="">Acadamic Qualification</label>
+                 <textarea  
+                 placeholder="Enter here" 
+                 class="form-control aqField"
+                 rows="3"
+                 style="background-color: whitesmoke;"
+                  ></textarea>
+
+                  <div class="container text-center mt-2 "  id="aqAddButton">
+                         <button style="color: white; background-color:#85BDBF ;border:none; border-radius:15%;" onclick="addNewaqfield()" >Add</button>
+                  </div>
+
+             </div>
+
+             
+
+         </div>
+        <div class="container text-center mt-3 mb-3">
+            <button style="color: white; background-color:#85BDBF ;border:solid; border-radius:11% ;font-size: large;" onclick="generateCv()" >Generate Cv</button>
+        </div>
+
+
+
+     </div>
+     </div>
+
+     <div class="container mt-3" id="cv-template">
+
+       <div class="row">
+
+        <div class="col-md-4 text-center py-5 background">
+            <img src="img/profp.png" class="img-fluid myimg" id="img-template" />
+
+            <div class="container">
+                <p style="font-size: 30px;color: #ffffff;" id="nameT" >Any name </p>
+                <p style="font-size: 20px;color: #ffffff;" id="ads" >Any -address -KSA <img id="limg" src="img/loc.png"/></p>
+                <p style="font-size: 20px;color: #ffffff;" id="conta" >Any -contact-02745634  <img id="cimg" src="img/call.png"/></p>
+                <hr />
+                <p><a id="li" href="#1">Linkedin</a></p>
+                <hr />
+                <p><a id="In" href="#2">Instagram</a></p>
+                <hr />
+                <p><a id="Tw" href="#3">Tweeter</a></p>
+            </div>
+
+        </div>
+        <div class="col-md-8 py-5 scol ">
+            <h1 id="nameT2" class="text-center" style="font-weight:880;color: #ffffff;">Your Name</h1>
+             
+            <div class="card" style="margin-bottom:10px;">
+                <div class="card-header ">
+                  <h3>Objective</h3>  
+                </div>
+                <div class="card-body">
+                    <p id="objT">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                         Dolorum, officia quisquam numquam dolores repellendus molestias nihil exercitationem veniam similique,
+                        labore sed impedit tempore? Iste adipisci hic quaerat sequi commodi consequuntur totam aspernatur, 
+                        voluptates quia sit dolorum facilis doloribus explicabo similique exercitationem ex perferendis ipsam,
+                     reprehenderit doloremque illo praesentium sapiente corrupti?</p>
+                </div>
+            </div>
+
+
+            <div class="card" style="margin-bottom:10px;">
+                <div class="card-header ">
+                  <h3>Work Experience</h3>  
+                </div>
+                <div class="card-body">
+                   <ul id="weT">
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                   </ul>
+                   
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom:10px;">
+                <div class="card-header ">
+                  <h3>Acadamic Qualification </h3>  
+                </div>
+                <div class="card-body">
+                   <ul id="aqT">
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quo!</li>
+                   </ul>
+                   
+                </div>
+            </div>
+
+        <div class="container mt-3 text-center">
+            <button type="button"
+            id="btP"
+            onclick="printCv()" 
+            class="btn btn-light"
+            style="margin-top:30px;"
+            >Print CV</button>
+        </div>
+
+        </div>
+
+
+       </div>
+
+
+     </div>
+
+
+
+
+
+
+    <script src="script.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
